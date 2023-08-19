@@ -1,0 +1,28 @@
+{% extends 'food/base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-header text-white bg-info">
+                    <div class="card-title">
+                        Profile
+                    </div>
+                </div>
+                <div class="card-body">
+                    <span>
+                        <h4> USERNAME : {{ user.username }}</h4>
+                    </span>
+                    <span>
+                        <h4>EMAIL ID : {{ user.email }}</h4>
+                    </span>
+                        Profile Photo <img src="{{ user.profile.image.url }}" width="100px">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'food/base.html' %}
+{% block body %}
+
+
+
+<style>
+    body{
+        background-color:#c6c6c6;
+    }
+    .btnn{
+        text-decoration : none;
+        border-radius: 7px;
+        padding: 10px;
+        background: blue;
+        color: white;
+        transition: 1s;
+      }
+      .btnn:hover {
+        background-color: lightblue;
+      }
+      .center1{
+        display:grid;
+        justify-content:center;
+        align-items:center;
+      }
+      .container{
+        position: absolute;
+        top:35%;
+        left:8%;
+      }
+      .new{
+        text-decoration:none;
+        text-align:center;
+      }
+      .center2{
+        text-align:center;
+        font-size:25px;
+      }
+        .center3{
+          text-align:center;
+          text-decoration:none;
+        }
+  </style>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-header text-white bg-info">
+                    <div class="card-title">
+                        ADD ITEM
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form method="POST" class="center1">
+                        {% csrf_token %}
+                        {% for field in form %}
+                           <div class="form-group">
+                                {{ field.name }}
+                                <br>
+                                {{ field }}
+                           </div>
+                        {% endfor %}
+                        <br>
+                        <button type="submit" class="btnn">SAVE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            
+
+                        
+{% endblock %}
+
+
+
+

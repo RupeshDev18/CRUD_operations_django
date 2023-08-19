@@ -1,0 +1,50 @@
+{% extends 'food/base2.html' %} {% block body %}
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+
+  .section {
+    display: flex;
+    width : 300px;
+    height : 300px;
+    justify-content : center;
+    align-items : center;
+    position : absolute; 
+    font-family: "Poppins", sans-serif;
+    color: c6c6c6;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.05),
+      0 25px 50px rgba(255, 255, 255, 0.2);
+      top: 40%;
+      left: 40%;
+      background : lightcyan;
+      border-radius : 10px;
+  }
+  span {
+    text-align: center;
+    display: grid;
+    align-items : center;
+    row-gap : 10px;
+  }
+  .btnn {
+    text-decoration : none;
+    border-radius: 7px;
+    padding: 10px;
+    background: blue;
+    color: white;
+    transition: 1s;
+  }
+  .btnn:hover {
+    background-color: lightblue;
+  }
+  h1{
+    font-size:20px;
+  }
+</style>
+<div class="section">
+  <span>
+    <h1>You Have Been Logout</h1>
+    <a href="{% url 'login' %}" class="btnn">Login</a>
+    <a href="{% url 'register' %}" class="btnn">Register</a>
+  </span>
+</div>
+
+{% endblock %}
